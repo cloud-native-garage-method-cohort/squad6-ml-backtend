@@ -61,7 +61,7 @@ spec:
           terminationMessagePolicy: File
           volumeMounts:
             - mountPath: "/.cvlib/"
-              name: frontend-model-storage
+              name: backend-model-storage
       volumes:
         - name: backend-model-storage
           persistentVolumeClaim:
