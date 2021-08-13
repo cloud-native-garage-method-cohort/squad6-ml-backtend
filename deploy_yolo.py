@@ -19,6 +19,7 @@ app = FastAPI(title='Deploying a ML Model with FastAPI')
 class Model(str, Enum):
     yolov3tiny = "yolov3-tiny"
     yolov3 = "yolov3"
+    yolov4 = "yolov4"
 
 
 # By using @app.get("/") you are allowing the GET method to work for the / endpoint.
@@ -56,7 +57,7 @@ def prediction(model: Model, file: UploadFile = File(...)):
     # 3. RUN OBJECT DETECTION MODEL
     
     # Run object detection
-    bbox, label, conf = cv.detect_common_objects(image, model=model, confidence=0.2)
+    bbox, label, conf = cv.detect_common_objects(image, model=model, confidence=0.5)
     
     # Create image that includes bounding boxes and labels
     output_image = draw_bbox(image, bbox, label, conf)
