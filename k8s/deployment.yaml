@@ -59,6 +59,14 @@ spec:
           resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: "/.cvlib/"
+              name: frontend-model-storage
+      volumes:
+        - name: backend-model-storage
+          persistentVolumeClaim:
+            claimName: backend-model-storage
+
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
