@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y && apt-get clea
 WORKDIR /
 
 RUN mkdir -p .cvlib/
-RUN mkdir -p .cvlib/images_uploaded
+RUN mkdir -p .cvlib/images_uploaded/
 
 RUN pip install tensorflow==2.5.0 opencv-python==4.5.3.56
 
