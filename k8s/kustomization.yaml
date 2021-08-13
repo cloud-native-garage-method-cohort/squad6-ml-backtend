@@ -4,6 +4,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - route.yaml
+  - pvc.yaml
 commonLabels:
   app: room-6-backend-app
   app.kubernetes.io/instance: room-6-backend-app-instance
